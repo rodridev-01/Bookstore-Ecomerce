@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LitString</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./assets/Icon/icon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="app-container">
+
+    <!-- Navibar -->
+    <nav id="nav">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="./assets/Icon/logo.png" alt="Logo" />
+        </div>
+        <div class="pag">
+          <ul class="menu">
+            <li>Inicio</a></li>
+            <li>Productos</a></li>
+            <li>Galería</li>
+            <li>Contacto</li>
+          </ul>
+        </div>
+        <div class="search">
+          <input type="text" class="search-input" id="searchInput" placeholder="Buscar en la tienda">
+          <i class="fa fa-magnifying-glass"></i>
+        </div>
+        <div class="menu-toggle">
+          &#9776;
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    <!-- Main Slider -->
+    <section id="images-slider" class="image-slider">
+      <div class="slider">
+        <div class="slider-wrapper">
+          <!-- Slide 1 -->
+          <div class="slide">
+            <img src="./assets/Slider/Banner2.png"
+              srcset="./assets/Slider/Banner2-mobile.png 768w, ./assets/Slider/Banner2.png 1920w"
+              sizes="(max-width: 768px) 100vw, 100vw" alt="Banner2_Books">
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide">
+            <img src="./assets/Slider/Banner3.png"
+              srcset="./assets/Slider/Banner3-mobile.png 768w, ./assets/Slider/Banner3.png 1920w"
+              sizes="(max-width: 768px) 100vw, 100vw" alt="Banner3_Books">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Strip Slider -->
+    <section id="strip-slider" class="image-slider strip-slider">
+      <div class="slider">
+        <div class="slider-wrapper">
+          <div class="slide">
+            <img src="./assets/Slider/Strip/Cintillo.jpg"
+              srcset="./assets/Slider/Strip/Cintillo-mobile.jpg 768w, ./assets/Slider/Strip/Cintillo.jpg 1920w"
+              sizes="(max-width: 768px) 100vw, 100vw" alt="Cintillo1">
+          </div>
+          <div id="books" class="slide">
+            <img src="./assets/Slider/Strip/Cintillo2.jpg"
+              srcset="./assets/Slider/Strip/Cintillo2-mobile.jpg 768w, ./assets/Slider/Strip/Cintillo2.jpg 1920w"
+              sizes="(max-width: 768px) 100vw, 100vw" alt="Cintillo2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Productos -->
+    <section class="categories-main">
+      <article id="search-section">
+        <div class="article-title">
+          <h1>Los mas destacados</h1>
+        </div>
+        <div class="categories">
+          <div class="category-item" onclick="selectCategory(1, this)">
+            <i class="fa-solid fa-book-open"></i>
+            <p>Novelas</p>
+          </div>
+          <div class="category-item" onclick="selectCategory(2, this)">
+            <i class="fa-solid fa-book"></i>
+            <p>Mangas</p>
+          </div>
+          <div class="category-item" onclick="selectCategory(3, this)">
+            <i class="fa-solid fa-pencil-alt"></i>
+            <p>Cómics</p>
+          </div>
+          <div class="category-item" onclick="selectCategory(4, this)">
+            <i class="fa-solid fa-feather"></i>
+            <p>Poesía</p>
+          </div>
+          <div class="category-item" onclick="selectCategory(5, this)">
+            <i class="fa-solid fa-book"></i>
+            <p>Antologías</p>
+          </div>
+          <div class="category-item" onclick="selectCategory(6, this)">
+            <i class="fa-solid fa-history"></i>
+            <p>Clásicos</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+    <div class="clear-filters">
+      <button onclick="clearCategory()" class="clear"><i class="fa-solid fa-x"></i>Quitar Filtros</button>
+    </div>
+
+
+    <div class="title-products">
+      <div class="category-indx">
+
+      </div>
+    </div>
+
+    <div class="products-page">
+      <div id="product-grid" class="product-grid"></div>
+      <div id="no-results" class="no-results" style="display: none;">
+        <p>No se encontraron libros para "<span id="searchQuery"></span>".</p>
+        <p>Lo sentimos, tal vez lo que buscas no esté aquí <i class="fa-solid fa-face-sad-tear"></i></p>
+      </div>
+    </div>
+
+    <!-- Galería -->
+    <article id="gallery-section" class="gal" style="margin-top: 30px; margin-bottom: 50px;">
+      <div class="article-title">
+        <h1 style="margin-bottom: 10px;">Galería de Libros</h1>
+      </div>
+
+      <div class="book-slider" reverse="true" style="
+    --book-width: 300px;
+    --book-height: 200px;
+    --book-quantity: 6;
+  ">
+        <div class="book-list">
+          <div class="book-item" style="--book-position: 1">
+            <img src="./assets/Books/A1.png" alt="Libro 1">
+          </div>
+          <div class="book-item" style="--book-position: 2">
+            <img src="./assets/Books/C1.png" alt="Libro 2">
+          </div>
+          <div class="book-item" style="--book-position: 3">
+            <img src="./assets/Books/C2.png" alt="Libro 3">
+          </div>
+          <div class="book-item" style="--book-position: 4">
+            <img src="./assets/Books/L1.png" alt="Libro 4">
+          </div>
+          <div class="book-item" style="--book-position: 5">
+            <img src="./assets/Books/N1.png" alt="Libro 5">
+          </div>
+          <div class="book-item" style="--book-position: 6">
+            <img src="./assets/Books/M2.png" alt="Libro 6">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Carrito -->
+    <div id="cart-button" class="cart-button">
+      <i class="fa-solid fa-shopping-cart"></i>
+      <span id="cart-counter" class="cart-counter">0</span>
+    </div>
+
+
+    <!-- Modal Carrito -->
+    <div id="cart" class="cart hidden">
+      <h3> Tu carrito <span id="close-cart-button"></span></h3>
+      <ul id="cart-items" class="cart-items"></ul>
+      <div class="cart-total" id="cart-total">Total: S/ 0.00</div>
+      <button id="checkout-button" class="checkout-button">Finalizar Compra</button>
+    </div>
+
+    <!-- Contacto -->
+    <footer id="footer contato">
+      <div class="container">
+        <div class="social-icons">
+          <a href="https://github.com/rodridev-01" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/rodrigou.py" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://x.com/rodridev01" target="_blank" rel="noopener" aria-label="X"><i
+              class="fab fa-twitter"></i></a>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2024. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+    <script src="slider.js"></script>
+    <script src="CategorySliders.js"></script>
+</body>
+
+</html>
