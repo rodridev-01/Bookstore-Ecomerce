@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="payment-container">
+        <h1>Completa tu compra</h1>
+
+        <div class="payment-methods">
+            <form id="payment-form">
+                <!-- Tarjeta -->
+                <div class="payment-method">
+                    <input type="radio" id="card-payment" name="payment-method" value="tarjeta" required>
+                    <label for="card-payment">
+                        <i class="fa-solid fa-credit-card"></i> Pago con Tarjeta
+                    </label>
+                </div>
+
+                <!-- PayPal -->
+                <div class="payment-method">
+                    <input type="radio" id="paypal-payment" name="payment-method" value="paypal">
+                    <label for="paypal-payment">
+                        <i class="fa-brands fa-paypal"></i> Pago con PayPal
+                    </label>
+                </div>
+
+                <!-- Transferencia Bancaria -->
+                <div class="payment-method">
+                    <input type="radio" id="bank-payment" name="payment-method" value="banco">
+                    <label for="bank-payment">
+                        <i class="fa-solid fa-building-columns"></i> Transferencia Bancaria
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-pagar">Pagar Ahora</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="pago.js"></script>
+</body>
+
+</html>

@@ -1099,3 +1099,90 @@ article {
       left: 100%;
   }
 }
+
+
+.payment-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título del formulario */
+.payment-container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Estilos para los métodos de pago */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Botón de cada opción de pago */
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al hacer hover sobre los métodos de pago */
+.payment-method:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Iconos de métodos de pago */
+.payment-method i {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+/* Etiquetas de cada método de pago */
+.payment-method label {
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+/* Botón para pagar */
+.btn-pagar {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en el botón de pagar */
+.btn-pagar:hover {
+  background-color: #0056b3;
+}
+
+/* Formato de inputs y radios */
+input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
