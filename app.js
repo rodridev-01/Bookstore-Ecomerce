@@ -221,22 +221,22 @@ document.querySelectorAll('.nav-container .pag ul li').forEach((item, index) => 
 
 
 
-function redirectToPayment() {
-  window.location.href = 'pago.html';  // Redirige a la página de pago
+const checkoutButton = document.getElementById('checkout-button');
+
+function getCartTotal() {
+  const totalText = cartTotalElement.textContent;
+  const totalValue = parseFloat(totalText.replace('Total: S/ ', '')); 
+  return totalValue;
 }
-document.getElementById('payment-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-  
-  // Puedes manejar cada opción de pago aquí
-  if (selectedPaymentMethod === 'tarjeta') {
-      alert('Redirigiendo al pago con tarjeta...');
-      // Redirigir a la pasarela de pago de tarjeta
-  } else if (selectedPaymentMethod === 'paypal') {
-      alert('Redirigiendo a PayPal...');
-      // Redirigir a PayPal
-  } else if (selectedPaymentMethod === 'banco') {
-      alert('Instrucciones para transferencia bancaria...');
-      // Mostrar instrucciones para pago bancario
+
+checkoutButton.addEventListener('click', () => {
+  const total = getCartTotal(); 
+  if (total > 0) {
+    // Redirigir a la URL de PayPal con el total
+    const paypalUrl = `https://paypal.me/racoonsdev/${total}?currency_code=PEN`;
+
+    window.location.href = paypalUrl;
+  } else {
+    alert('El carrito está vacío.');
   }
 });
