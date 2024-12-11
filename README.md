@@ -4,7 +4,6 @@ Welcome to our educational bookstore landing page! This e-commerce simulation de
 
 ## Key Features
 
-- **Modern, Dark Theme**: Sleek design with a user-friendly, dark interface.
 - **Responsive Design**: Mobile-first approach, optimized for all devices.
 - **Product Slider**: Highlights featured books.
 - **Search & Filter**: Find books by name or category.
